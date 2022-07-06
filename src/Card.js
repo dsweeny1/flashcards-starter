@@ -3,11 +3,11 @@ const prototypeQuestions = data.prototypeData;
 const util = require('./util');
 
 class Card {
-    constructor() {
+    constructor(id, question, answers, correctAnswer) {
         this.id = id;
         this.question = question;
-        this.choices = [];
-        this.answer = answer;
+        this.answers = answers;
+        this.correctAnswer = correctAnswer
     }
 }
 
