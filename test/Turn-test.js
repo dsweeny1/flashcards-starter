@@ -39,7 +39,7 @@ describe('Turn', function() {
         expect(turn.card).to.equal(card3)
     })
 
-    it('should be able to evaluate guess', function() {
+    it('should be able to evaluate guess and give feedback', function() {
         
         expect(turn.evaluateGuess()).to.equal(true)
         expect(turn.giveFeedback()).to.equal('Correct!')

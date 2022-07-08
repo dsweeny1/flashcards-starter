@@ -4,9 +4,6 @@ const expect = chai.expect;
 const Deck = require('../src/Deck');
 const Card = require('../src/Card');
 const Turn = require('../src/Turn');
-// const prototypeQuestions = data.prototypeData;
-// const data = require('./data');
-// ??? const Round = require('../src/Round');
 
 describe('Deck', function() {
     let deck;
@@ -52,11 +49,6 @@ describe('Deck', function() {
 
         expect(deck).to.be.an.instanceOf(Deck)
     })
-
-    // it('should have multiple cards in the deck', function() {
-
-    //     expect(deck.cards).to.deep.equal([card1, card2, card3, card4]);
-    // })
 
     it('should count the cards in the deck', function() {
 
