@@ -41,7 +41,6 @@ describe('Round', function() {
             "accessor method"
           );
           deck = new Deck([card1, card2, card3, card4]);
-          turn = new Turn('object', deck.cards)
           round = new Round(deck);
       });
 
@@ -61,9 +60,9 @@ describe('Round', function() {
 
       it('should return the current card', function() {
 
-        round.returnCurrentCard()
+        const currentCard = round.returnCurrentCard()
 
-        expect(round.returnCurrentCard()).to.equal(card1)
+        expect(currentCard).to.equal(card1)
       })
 
       it('should have a method for the player to take a turn', function() {
@@ -83,32 +82,31 @@ describe('Round', function() {
         expect(round.turns).to.equal(4);
       })
 
-    //   it("should be able to evaluate if the player's guess is correct", function() {
-        
-    //     expect(round.takeTurn(turn.card.correctAnswer)).to.equal('Correct!');
-    //   })
-
       it("should be able to evaluate if the player's guess is correct or incorrect", function() {
 
-        round.takeTurn(turn.card.correctAnswer, 'Correct!')
-        round.takeTurn('guess', 'Nope!')
-
-        expect(round.takeTurn(turn.card.correctAnswer)).to.equal('Correct!');
+        expect(round.takeTurn('object')).to.equal('Correct!');
         expect(round.takeTurn('guess')).to.equal('Nope!');
+      })
+
+      it('should return feedback', function() {
+
+        const feedback = round.takeTurn();
+
+        expect(feedback).to.be.a('string');
       })
 
       it('should return the percent correct to the player', function() {
 
-        round.takeTurn(turn.card.correctAnswer);
+        round.takeTurn('object');
         round.takeTurn('guess');
-        round.calculatePercentCorrect();
+        const correctPercent = round.calculatePercentCorrect();
 
-        expect(round.calculatePercentCorrect()).to.equal(50);
+        expect(correctPercent).to.equal(50);
       });
 
       it('should tell the user of their correct answer percentage', function() {
 
-        round.takeTurn(turn.card.correctAnswer);
+        round.takeTurn('object');
         round.takeTurn('guess');
 
         expect(round.endRound()).to.equal(`** Round over! ** You answered ${round.calculatePercentCorrect()}% of the questions correctly!`)
