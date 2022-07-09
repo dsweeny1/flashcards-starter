@@ -5,6 +5,7 @@ This is my first project of Mod 2. I created a flashcards game using Test Driven
 
 ## GIF
 
+![flashcards_MOV_AdobeExpress](https://user-images.githubusercontent.com/11345457/178086994-b71a29de-f073-44e0-9578-af7ad4cb3a36.gif)
 
 
 ## TECHNOLOGIES USED
